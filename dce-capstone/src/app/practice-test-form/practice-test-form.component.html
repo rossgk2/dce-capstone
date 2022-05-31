@@ -1,0 +1,18 @@
+<p>Please enter your name, email, and teaching assistant's email to get your practice teach and get approved to take the final</p>
+
+<form [formGroup]="testForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input id="name" type="text" formControlName="name">
+  <br>
+  <label for="studentEmail">Student Email:</label>
+  <input id="studentEmail" type="text" formControlName="studentEmail">
+  <br>
+  <label for="teacherEmail">Teacher Email:</label>
+  <input id="teacherEmail" type="text" formControlName="teacherEmail">
+  <br>
+  <br>
+  <button type="submit" [disabled]="!testForm.valid">Let's Goooo</button>
+</form>
+
+
+

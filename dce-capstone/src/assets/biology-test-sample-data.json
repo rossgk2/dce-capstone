@@ -1,0 +1,103 @@
+{
+    "questions": [
+    {
+        "text": "Based on your knowledge of scientific investigations, which stage of scientific investigation did the invention of the microscope significantly advance?",
+        "answers":
+        {
+            "a": "Communicating the results of experimentation",
+            "b": "Gathering the data for the investigation",
+            "c": "Generating explanations of phenomena",
+            "d": "Planning the investigation and experimentation"
+        }
+    },
+    {
+        "text": "A student is conducting an investigation to determine the effect of temperature on the metabolism of yeast (Saccharomyces cerevisiae). Yeast and sugar are added to water, the gas produced is captured, and its volume is recorded. Which variables should be held constant during this investigation?",
+        "answers":
+        {
+            "a": "Mass of sugar and water temperature",
+            "b": "Mass of yeast and mass of sugar",
+            "c": "Volume of gas and water temperature",
+            "d": "Volume of gas and mass of yeast"
+        }
+    },
+    {
+        "text": "Scientific law and scientific theory are similiar in that...",
+        "answers":
+        {
+            "a": "they're based on what we expect to happen based on natural history",
+            "b": "describe the events that can be observed in nature",
+            "c": "explain why events and conditions occur as they do in the natural world",
+            "d": "represent a large amount of scientific investigation and evidence"
+        }
+    },
+    {
+        "text": "Which of the following best describes a result of the polar nature of water molecules? ",
+        "answers":
+        {
+            "a": "Ionic compounds dissolve easily in water",
+            "b": "Large medical institutions have conducted their own experiments justifying cell theory",
+            "c": "The basics of cell theory have not changed much since the original experiments",
+            "d": "What we know about cell theory has been published in reputable journals"
+        }
+    },
+    {
+        "text": "Water has a much higher specific heat than most other covalent compounds. What do you predict might happen if water had a low specific heat instead?",
+        "answers":
+        {
+            "a": "Flooding would occur and animals would be forced to migrate",
+            "b": "Harmful organisms living in water would reproduce at a rapid rate",
+            "c": "Organisms that are sensitive to changes in temperature would die",
+            "d": "Plants would not have enough water to effectively carry out photosynthesis"
+        }
+    },
+    {
+        "text": "In which of the following circumstances would it be most likely for large organic molecules to form during a laboratory experiment?",
+        "answers":
+        {
+            "a": "If amino acids and nucleic acids both formed",
+            "b": "If oxygen were slowly added as the experiment progressed",
+            "c": "If RNA segments that could act as catalysts formed",
+            "d": "A grimple conducted the experiment"
+        }
+    },
+    {
+        "text": "Assume a group of scientists has managed to set up an experiment simulating the conditions of early Earth that resulted in a cell with DNA using RNA to produce proteins from amino acids as modern cells do. What conclusion could they draw from this experiment?",
+        "answers":
+        {
+            "a": "It is possible for a cell similar to a modern cell to form under the conditions of the experiment",
+            "b": "Modern cells developed from inorganic compounds in the conditions that existed on early Earth",
+            "c": "The conditions of their experiment exactly replicated the conditions found on early Earth",
+            "d": "The way modern cells function is the only way a cell could be constructed and survive"
+        }
+    },
+    {
+        "text": "A variety of organic molecules have been found in meteorites that have landed on Earth, including individual amino acids and lipid molecules. To date, however, no microspheres have been found on these meteorites. Why is it unlikely that microspheres will ever be found on a meteorite even though lipids can form in them?",
+        "answers":
+        {
+            "a": "Both are made up of monosaccharide monomers, but lipids are hydrophobic and carbohydrates are hydrophilic",
+            "b": "Any microspheres that formed would be destroyed by the radiation in space",
+            "c": "Groups of lipids will only form into microspheres when they are in liquid water",
+            "d": "Individual lipids can only begin to form microspheres when oxygen is present"
+        }
+    },
+      {
+        "text": "Which of the following best compares the structures found in plant cells and animal cells?",
+        "answers":
+        {
+          "a": "Animal cells contain cell walls and a large central vacuole while plant cells contain cell membranes and many small vacuoles",
+          "b": "Animal cells do not contain chloroplasts, cell walls, or a large central vacuole while plant cells do",
+          "c": "Plant cells contain rough endoplasmic reticulum and a Golgi apparatus while animal cells contain smooth endoplasmic reticulum surrounded by lysosomes",
+          "d": "Plant cells have rigid cell walls and do not contain mitochondria or ribosomes while animal cells do"
+        }
+      },
+    {
+        "text": "To help patients replenish bodily fluids quickly during an illness, doctors need to understand how cells behave in their environment. Doctors have confidence in what they know about how cells behave because...",
+        "answers":
+        {
+            "a": "cell theory has been tested, refined, and observed to be true over hundreds of years",
+            "b": "large medical institutions have conducted their own experiments justifying cell theory",
+            "c": "the basics of cell theory have not changed much since the original experiments",
+            "d": "what we know about cell theory has been published in reputable journals"
+        }
+    }]
+}
