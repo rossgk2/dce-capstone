@@ -45,6 +45,7 @@ export class PracticeTestFormComponent implements OnInit {
             }
         }, error => {
             this.spinner.hide();
+            console.log(error);
             alert('There has been an error. How embarrassing.');
         });
     }
