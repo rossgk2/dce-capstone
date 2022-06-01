@@ -1,0 +1,195 @@
+{
+    "type": "object",
+    "properties":
+    {
+        "payload":
+        {
+            "type": "object",
+            "properties":
+            {
+                "studentName":
+                {
+                    "type": "string"
+                },
+                "studentEmail":
+                {
+                    "type": "string"
+                },
+                "teacherEmail":
+                {
+                    "type": "string"
+                },
+                "question1":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "text":
+                        {
+                            "type": "string"
+                        },
+                        "answers":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "a":
+                                {
+                                    "type": "string"
+                                },
+                                "b":
+                                {
+                                    "type": "string"
+                                },
+                                "c":
+                                {
+                                    "type": "string"
+                                },
+                                "d":
+                                {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "question2":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "text":
+                        {
+                            "type": "string"
+                        },
+                        "answers":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "a":
+                                {
+                                    "type": "string"
+                                },
+                                "b":
+                                {
+                                    "type": "string"
+                                },
+                                "c":
+                                {
+                                    "type": "string"
+                                },
+                                "d":
+                                {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "question3":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "text":
+                        {
+                            "type": "string"
+                        },
+                        "answers":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "a":
+                                {
+                                    "type": "string"
+                                },
+                                "b":
+                                {
+                                    "type": "string"
+                                },
+                                "c":
+                                {
+                                    "type": "string"
+                                },
+                                "d":
+                                {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "question4":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "text":
+                        {
+                            "type": "string"
+                        },
+                        "answers":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "a":
+                                {
+                                    "type": "string"
+                                },
+                                "b":
+                                {
+                                    "type": "string"
+                                },
+                                "c":
+                                {
+                                    "type": "string"
+                                },
+                                "d":
+                                {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "question5":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "text":
+                        {
+                            "type": "string"
+                        },
+                        "answers":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "a":
+                                {
+                                    "type": "string"
+                                },
+                                "b":
+                                {
+                                    "type": "string"
+                                },
+                                "c":
+                                {
+                                    "type": "string"
+                                },
+                                "d":
+                                {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
