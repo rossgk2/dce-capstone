@@ -148,6 +148,10 @@ article h2 {
     margin-bottom: 12px
 }
 
+article > img {
+    max-width: 100%;
+}
+
 footer {
     background: #344;
     max-width: 1000px;
@@ -171,7 +175,15 @@ aside > div {
     min-height: 150px;
     padding: 30px 10px;
     text-align: center;
-    color: #FFF
+    color: #FFF;
+}
+
+aside > div > img {
+    max-width: 100%;
+}
+
+aside > div > p {
+    font-size: 28px;
 }
 
 a#logo {
@@ -183,7 +195,7 @@ a#logo {
     text-decoration: none;
     text-align: center;
     line-height: 40px;
-    padding: 60px 5px
+    padding: 25px 5px
 }
 
 body > section {
@@ -221,6 +233,18 @@ body > section {
     width: 300px;
     background: #9dc1c1;
     padding: 10px
+}
+
+#sidebarContent a {
+    font-size: 30px;
+}
+
+#sidebarContent p {
+    text-align: center;
+}
+
+#dreams {
+    margin-bottom: 30px;
 }
 
 footer a {
