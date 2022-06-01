@@ -39,7 +39,6 @@ export class PracticeTestFormComponent implements OnInit {
       console.log(data);
       if (data.status === 200) {
         // this.spinner.hide();
-        console.log('fuckin worked, motherfuckers, let\'s go sign some shit');
         if (data.body) {
           // @ts-ignore
           window.location.href = data.body[0].esignUrl;
