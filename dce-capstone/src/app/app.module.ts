@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { PracticeTestFormComponent } from './practice-test-form/practice-test-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {NgxSpinnerModule} from "ngx-spinner";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import {HttpClientModule} from "@angular/common/http";
     imports: [
       BrowserModule,
       ReactiveFormsModule,
-      HttpClientModule
+      HttpClientModule,
+        BrowserAnimationsModule,
+        NgxSpinnerModule
     ],
   providers: [],
   bootstrap: [AppComponent]

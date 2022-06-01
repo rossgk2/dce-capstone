@@ -4,6 +4,7 @@ import questionData from 'src/assets/biology-test-sample-data.json';
 import payloadJson from 'src/assets/to-send.json';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FlowServiceService} from "../flow-service.service";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-practice-test-form',
@@ -18,7 +19,8 @@ export class PracticeTestFormComponent implements OnInit {
   private flowUrl = 'https://prod-88.westus.logic.azure.com:443/workflows/e23d1399c95d4456ad2b31162f6c7939/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=3jbYL8dcO0wNoyRMoGVR7oRu8JSnPiIq8LYCk9yVggU';
 
   constructor(private formBuilder: FormBuilder,
-              private flowService: FlowServiceService) {
+              private flowService: FlowServiceService,
+              private spinner: NgxSpinnerService) {
     this.testForm = this.formBuilder.group({
       name: ['', Validators.required],
       studentEmail: ['', Validators.email],
@@ -27,6 +29,7 @@ export class PracticeTestFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.spinner.show();
     let numbers = this.getFiveRandomNumbers();
     this.populatePayload(this.questions, numbers);
     console.log(this.testPayload);
@@ -35,6 +38,7 @@ export class PracticeTestFormComponent implements OnInit {
     call.subscribe(data => {
       console.log(data);
       if (data.status === 200) {
+        // this.spinner.hide();
         console.log('fuckin worked, motherfuckers, let\'s go sign some shit');
         if (data.body) {
           // @ts-ignore
