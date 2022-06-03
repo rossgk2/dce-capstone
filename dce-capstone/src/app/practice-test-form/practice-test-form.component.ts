@@ -22,8 +22,8 @@ export class PracticeTestFormComponent implements OnInit {
                 private spinner: NgxSpinnerService) {
         this.testForm = this.formBuilder.group({
             name: ['', Validators.required],
-            studentEmail: ['', Validators.email],
-            teacherEmail: ['', Validators.email]
+            studentEmail: ['', [Validators.email, Validators.required]],
+            teacherEmail: ['', [Validators.email, Validators.required]]
         });
     }
 
