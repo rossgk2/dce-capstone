@@ -1,4 +1,4 @@
-# DCE Capstone Project
+# DCE Project
 
 The customer story here is the teacher's students struggle, and she wants to set them up for success, so they have to pass a practice test before they can take the final. 
 She has a practice test that she wants digitized so she can just have the students go to the student portal and generate it as needed.
