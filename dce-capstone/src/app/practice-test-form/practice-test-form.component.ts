@@ -15,6 +15,8 @@ export class PracticeTestFormComponent implements OnInit {
     public testForm: FormGroup;
     private questions = questionData.questions;
     private testPayload = payloadJson;
+
+    //pulled from the "when http request is received" step of the Power Automate flow
     private flowUrl = 'https://prod-88.westus.logic.azure.com:443/workflows/e23d1399c95d4456ad2b31162f6c7939/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=3jbYL8dcO0wNoyRMoGVR7oRu8JSnPiIq8LYCk9yVggU';
 
     constructor(private formBuilder: FormBuilder,
@@ -37,10 +39,10 @@ export class PracticeTestFormComponent implements OnInit {
         call.subscribe(data => {
             console.log(data);
             if (data.status === 200) {
-                // this.spinner.hide();
+                //delay is handled in the Power Automate flow
                 if (data.body) {
                     // @ts-ignore
-                    window.location.href = data.body[0].esignUrl;
+                    window.location.href = data.body[0].esignUrl; //the redirect from your site
                 }
             }
         }, error => {
