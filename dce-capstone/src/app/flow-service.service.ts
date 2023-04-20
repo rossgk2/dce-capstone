@@ -9,7 +9,7 @@ export class FlowServiceService {
     constructor(private http: HttpClient) {
     }
 
-    getTest(url: string, payload: any) {
+    makeAgreement(url: string, payload: any) {
         const headers = new HttpHeaders()
             .set('content-type', 'application/json');
         return this.http.post(

@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import questionData from 'src/assets/biology-test-sample-data.json';
 import payloadJson from 'src/assets/to-send.json';
 import {FlowServiceService} from "../flow-service.service";
-import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
     selector: 'app-practice-test-form',
@@ -12,82 +11,44 @@ import {NgxSpinnerService} from "ngx-spinner";
 })
 export class PracticeTestFormComponent implements OnInit {
 
-    public testForm: FormGroup;
+    public insuranceForm: FormGroup;
     private questions = questionData.questions;
     private testPayload = payloadJson;
 
+    private webFormUrl = 'https://sign-acs-todd.na4.adobesign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBabsyw5jvNBjA4z7Nzw-1Kq361mJmS5BqfzwmdS-EkWicnyGvKAD4audzvpsfBpWc*';
+
     //pulled from the "when http request is received" step of the Power Automate flow
-    private flowUrl = 'https://prod-88.westus.logic.azure.com:443/workflows/e23d1399c95d4456ad2b31162f6c7939/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=3jbYL8dcO0wNoyRMoGVR7oRu8JSnPiIq8LYCk9yVggU';
+    private flowUrl = 'https://prod-73.westus.logic.azure.com:443/workflows/85f9a73063894f849027bb8f0370aacf/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=m1rNyUBz3_j4d_C3DqckgaIhIzZ9HXJ7sAhqJfk4IXk';
 
     constructor(private formBuilder: FormBuilder,
-                private flowService: FlowServiceService,
-                private spinner: NgxSpinnerService) {
-        this.testForm = this.formBuilder.group({
-            name: ['', Validators.required],
-            studentEmail: ['', [Validators.email, Validators.required]],
-            teacherEmail: ['', [Validators.email, Validators.required]]
+                private flowService: FlowServiceService) {
+        this.insuranceForm = this.formBuilder.group({
+            state: ['', Validators.required],
+            numberEmployees: ['', [Validators.required]],
+            formType: ['', [Validators.required]]
         });
     }
 
     onSubmit(): void {
-        this.spinner.show();
-        let numbers = this.getFiveRandomNumbers();
-        this.populatePayload(this.questions, numbers);
-        console.log(this.testPayload);
-        let call = this.flowService.getTest(this.flowUrl, this.testPayload);
-        console.log('starting call...');
-        call.subscribe(data => {
-            console.log(data);
-            if (data.status === 200) {
-                //delay is handled in the Power Automate flow
-                if (data.body) {
-                    // @ts-ignore
-                    window.location.href = data.body[0].esignUrl; //the redirect from your site
+        if (this.insuranceForm.controls['numberEmployees'].value == 27) {
+            window.location.href = this.webFormUrl;
+        } else {
+            let call = this.flowService.makeAgreement(this.flowUrl, this.testPayload);
+            console.log('starting call...');
+            call.subscribe(data => {
+                console.log(data);
+                if (data.status === 202) {
+                    //delay is handled in the Power Automate flow
+                    alert("Your Form Has Been Sent.");
+                    this.insuranceForm.reset();
                 }
-            }
-        }, error => {
-            this.spinner.hide();
-            console.log(error);
-            alert('There has been an error. How embarrassing.');
-        });
-    }
-
-    getFiveRandomNumbers(): number[] {
-        let numbers = [];
-        while (numbers.length < 5) {
-            let newNumber = this.getRandomInt();
-            if (numbers.indexOf(newNumber) === -1) {
-                numbers.push(newNumber);
-            }
+            }, error => {
+                console.log(error);
+                alert('There has been an error. How embarrassing.');
+            });
         }
-        return numbers;
-    }
-
-    getRandomInt(): number {
-        return Math.floor(Math.random() * 10);
     }
 
     ngOnInit(): void {
     }
-
-    populatePayload(questions: any, numbers: any): any {
-        this.testPayload.payload.studentEmail = this.testForm.controls['studentEmail'].value;
-        this.testPayload.payload.teacherEmail = this.testForm.controls['teacherEmail'].value;
-        this.testPayload.payload.studentName = this.testForm.controls['name'].value;
-        this.populateQuestion(this.testPayload.payload.question1, numbers[0]);
-        this.populateQuestion(this.testPayload.payload.question2, numbers[1]);
-        this.populateQuestion(this.testPayload.payload.question3, numbers[2]);
-        this.populateQuestion(this.testPayload.payload.question4, numbers[3]);
-        this.populateQuestion(this.testPayload.payload.question5, numbers[4]);
-    }
-
-    populateQuestion(testQuestion: any, questionNumber: number) {
-        let currentRandomQuestion = this.questions[questionNumber];
-        testQuestion.text = currentRandomQuestion.text;
-        testQuestion.answers.a = currentRandomQuestion.answers.a;
-        testQuestion.answers.b = currentRandomQuestion.answers.b;
-        testQuestion.answers.c = currentRandomQuestion.answers.c;
-        testQuestion.answers.d = currentRandomQuestion.answers.d;
-    }
-
 }

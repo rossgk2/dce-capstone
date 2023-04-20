@@ -6,7 +6,6 @@ import {PracticeTestFormComponent} from './practice-test-form/practice-test-form
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgxSpinnerModule} from "ngx-spinner";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [
@@ -17,7 +16,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        BrowserAnimationsModule,
         NgxSpinnerModule
     ],
     providers: [],
