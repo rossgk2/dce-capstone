@@ -1,5 +1,5 @@
 {
-	"payload": {
-        "sendAgreement" : "yes"
-    }
+  "payload": {
+    "sendAgreementTo": "guerrademo+signer@gmail.com"
+  }
 }
