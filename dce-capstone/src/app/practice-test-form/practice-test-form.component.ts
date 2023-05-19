@@ -17,6 +17,7 @@ export class PracticeTestFormComponent implements OnInit {
 
     constructor(private formBuilder: FormBuilder, private flowService: FlowServiceService) {
         this.insuranceForm = this.formBuilder.group({
+            initEmail: ['', [Validators.required, Validators.email]],
             aaEmail: ['', [Validators.required, Validators.email]],
             supEmail: ['', [Validators.required, Validators.email]],
             initiatorType: ['traveler' /* initial value */ ]
@@ -25,6 +26,7 @@ export class PracticeTestFormComponent implements OnInit {
 
     onSubmit(): void {
         let payload = {
+            "initEmail": this.insuranceForm.controls['initEmail'].value,
             "aaEmail": this.insuranceForm.controls['aaEmail'].value,
             "supEmail": this.insuranceForm.controls['supEmail'].value,
             "initiatorType": this.insuranceForm.controls['initiatorType'].value // is either 'traveler' or 'program-manager'
