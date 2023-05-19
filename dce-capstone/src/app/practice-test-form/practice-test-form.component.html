@@ -4,12 +4,17 @@
 <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit()">
   <table>
     <th></th>
-  <br>
+    <br>
     <tr>
-      <td><label for="email">Email:</label></td>
-      <td><input id="email" type="text" formControlName="email"></td>
+      <td><label for="appointing-authority-email">Appointing authority email:</label></td>
+      <td><input id="appointing-authority-email" type="text" formControlName="aaEmail"></td>
     </tr>
-  <br>
+    <br>
+    <tr>
+      <td><label for="supervisor-email">Supervisor email:</label></td>
+      <td><input id="supervisor-email" type="text" formControlName="supEmail"></td>
+    </tr>
+    <br>
     <tr>
       <td><label for="initiatorType">Form Selection:</label></td>
       <td>
@@ -17,7 +22,6 @@
           <input type="radio" id="traveler" value="traveler" name="initiatorType" formControlName="initiatorType" (change)="changeInitiatorType($event)" checked>
           <label for="traveler">Traveler</label>
         </div>
-
         <div>
           <input type="radio" id="program-manager" value="program-manager" name="initiatorType" formControlName="initiatorType" (change)="changeInitiatorType($event)">
           <label for="traveler">Program manager</label>
