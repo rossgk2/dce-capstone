@@ -39,9 +39,12 @@ export class PracticeTestFormComponent implements OnInit {
         console.log('starting call...');
         call.subscribe(data => {
             console.log(data);
-            if (data.status === 202) {
+            if (data.status === 200) {
                 //delay is handled in the Power Automate flow
                 alert("Your Form Has Been Sent.");
+                const esignUrl = (data.body as any[])[0].esignUrl;
+                console.log(esignUrl);
+                window.location.href = esignUrl;
                 this.insuranceForm.reset();
             }
         }, error => {
