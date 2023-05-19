@@ -3,6 +3,7 @@
 <br/>
 <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit()">
   <table>
+    <th></th>
   <br>
     <tr>
       <td><label for="email">Email:</label></td>
@@ -16,7 +17,7 @@
           <input type="radio" id="traveler" value="traveler" name="initiatorType" formControlName="initiatorType" (change)="changeInitiatorType($event)" checked>
           <label for="traveler">Traveler</label>
         </div>
-    
+
         <div>
           <input type="radio" id="program-manager" value="program-manager" name="initiatorType" formControlName="initiatorType" (change)="changeInitiatorType($event)">
           <label for="traveler">Program manager</label>
