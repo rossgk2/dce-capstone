@@ -10,27 +10,8 @@
     </tr>
     <br>
     <tr>
-      <td><label for="appointing-authority-email">Appointing authority email:</label></td>
-      <td><input id="appointing-authority-email" type="text" formControlName="aaEmail"></td>
-    </tr>
-    <br>
-    <tr>
       <td><label for="supervisor-email">Supervisor email:</label></td>
       <td><input id="supervisor-email" type="text" formControlName="supEmail"></td>
-    </tr>
-    <br>
-    <tr>
-      <td><label for="initiatorType">Are you a traveler or program manager?</label></td>
-      <td>
-        <div>
-          <input type="radio" id="traveler" value="traveler" name="initiatorType" formControlName="initiatorType" (change)="changeInitiatorType($event)" checked>
-          <label for="traveler">Traveler</label>
-        </div>
-        <div>
-          <input type="radio" id="program-manager" value="program-manager" name="initiatorType" formControlName="initiatorType" (change)="changeInitiatorType($event)">
-          <label for="traveler">Program manager</label>
-        </div>      
-      </td>
     </tr>
     <br>
     <tr><td></td><td><button type="submit" [disabled]="!insuranceForm.valid">Sign Up</button></td></tr>

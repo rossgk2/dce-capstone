@@ -13,23 +13,19 @@ export class PracticeTestFormComponent implements OnInit {
     selectedRadioOption: string = 'traveler';    
 
     /* Pulled from the "when http request is received" step of the Power Automate flow. */
-    private flowUrl = 'https://prod-189.westus.logic.azure.com:443/workflows/2598a68443c541f18032e2211c8fdb65/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=CGvS20Ro5hfsBweScnMgVhtBsERJgvG1dWa1J7aWzA0';
+    private flowUrl = 'https://prod-142.westus.logic.azure.com:443/workflows/67c8aee857a7456a95c3f7673256517f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Orx2zWmwzHuZwV3pwIolI2fbIcTTsGRjAIW3yMAc0-Y';
 
     constructor(private formBuilder: FormBuilder, private flowService: FlowServiceService) {
         this.insuranceForm = this.formBuilder.group({
             initEmail: ['', [Validators.required, Validators.email]],
-            aaEmail: ['', [Validators.required, Validators.email]],
-            supEmail: ['', [Validators.required, Validators.email]],
-            initiatorType: ['traveler' /* initial value */ ]
+            supEmail: ['', [Validators.required, Validators.email]]
         });
     }
 
     onSubmit(): void {
         let payload = {
             "initEmail": this.insuranceForm.controls['initEmail'].value,
-            "aaEmail": this.insuranceForm.controls['aaEmail'].value,
-            "supEmail": this.insuranceForm.controls['supEmail'].value,
-            "initiatorType": this.insuranceForm.controls['initiatorType'].value // is either 'traveler' or 'program-manager'
+            "supEmail": this.insuranceForm.controls['supEmail'].value
         };
 
         console.log(payload);
@@ -41,7 +37,7 @@ export class PracticeTestFormComponent implements OnInit {
             console.log(data);
             if (data.status === 200) {
                 //delay is handled in the Power Automate flow
-                alert("Your Form Has Been Sent.");
+                alert("Your form has been sent.");
                 const esignUrl = (data.body as any[])[0].esignUrl;
                 console.log(esignUrl);
                 window.location.href = esignUrl;
